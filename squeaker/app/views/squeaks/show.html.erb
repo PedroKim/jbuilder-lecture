@@ -1,0 +1,13 @@
+<h1>One Single Squeak!</h1>
+<li>
+    <%= @squeak.body %>
+    -
+    <%= @squeak.author.username %>
+    <a href="<%= edit_squeak_url(@squeak) %>">Edit Squeak!</a>
+
+    <form action="<%= squeak_url(@squeak) %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+
+        <input type="submit" value="Delete this Squeak! :(">
+    </form>
+</li>

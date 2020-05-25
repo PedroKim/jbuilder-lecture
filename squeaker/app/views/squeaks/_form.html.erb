@@ -1,0 +1,24 @@
+<% if edit %>
+    <% action = squeak_url(squeak) %>
+    <% button_text = "Update Squeak!" %>
+<% else %>
+    <% action = squeaks_url %>
+    <% button_text = "Squeak it!" %>
+<% end %>
+
+<form action="<%= action %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <% if edit %>
+        <input type="hidden" name="_method" value="PATCH">
+    <% end %>
+
+    <label for="squeak_body">Body</label>
+    <input id="squeak_body" type="text" name="squeak[body]" 
+    value="<%= squeak.body %>">
+
+    <label for="squeak_author_id">Author Id</label>
+    <input id="squeak_author_id" type="text" name="squeak[author_id]" 
+    value="<%= squeak.author_id %>">
+
+    <input type="submit" value="<%= button_text %>">
+</form>

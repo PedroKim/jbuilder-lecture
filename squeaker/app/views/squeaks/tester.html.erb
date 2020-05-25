@@ -1,0 +1,12 @@
+<h1>Hi from the tester view!</h1>
+<%= 1 + 2 %>
+<%#= runs ruby code and outputs to the page %>
+<%# runs ruby code but doesnt put return value into HTML %> 
+<ul>
+    <% ["hello", "world"].each do |word| %>
+        <li>
+            <% str = "!" %>
+            <%= word + str %>
+        </li>
+    <% end %>
+</ul>

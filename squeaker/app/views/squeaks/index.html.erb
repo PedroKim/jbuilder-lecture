@@ -1,0 +1,13 @@
+<h1>All the Squeaks!!!</h1>
+<ul>
+    <% @squeaks.each do |squeak| %>
+        <li>
+            <%= squeak.body %>
+            <%= squeak.author.username %>
+            <%# debugger %>
+            <a href="<%= squeak_url(squeak) %>">
+                Show page!
+            </a>
+        </li>
+    <% end %>
+</ul>
